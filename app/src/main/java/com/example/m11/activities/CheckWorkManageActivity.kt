@@ -133,6 +133,7 @@ class CheckWorkManageActivity : BaseActivity() {
     }
     private fun initCheckStateResultList() {
         val linearLayoutManager = LinearLayoutManager(this)
+        println("==999")
         checkWorkInfoList = QuerySqlOP(this@CheckWorkManageActivity).queryAllCheckWork()
         rv_check_work_state_result.layoutManager = linearLayoutManager
         rv_check_work_state_result.adapter = CheckWorkAdapter(checkWorkInfoList)
