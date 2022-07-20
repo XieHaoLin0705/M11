@@ -113,6 +113,7 @@ class CheckWorkManageActivity : BaseActivity() {
         if (lineList.contains("24")) {
             productListView.cb_pop_search_line_24.isChecked = true
         }
+        
         productListView.tv_pop_search_line_sure.setOnClickListener {
             val isChecked24  = productListView.cb_pop_search_line_24.isChecked
             val isChecked104  = productListView.cb_pop_search_line_104.isChecked
