@@ -171,7 +171,7 @@ class QuerySqlOP(context: Context?) {
         }
         return checkAllWorkInfoList
     }
-    fun queryChooseResult(queryResultList: MutableList<QueryResultInfo>, companyChooseList: MutableList<String>, illegalChooseList: MutableList<String>, stateChooseList: MutableList<String>): List<QueryResultInfo> {
+    fun queryChooseResult(queryResultList: MutableList<QueryResultInfo>, companyChooseList: MutableList<String>, illegalChooseList: MutableList<String>, stateChooseList: MutableList<String>): MutableList<QueryResultInfo> {
         var a = 0
         var b = 0
         var c = 0

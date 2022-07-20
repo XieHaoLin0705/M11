@@ -256,9 +256,8 @@ class MainActivity : BaseActivity() {
             }
 
             val queryAllResultList = QuerySqlOP(this@MainActivity).queryAllResult()
-            val queryResultList2 = QuerySqlOP(this@MainActivity).queryChooseResult(queryAllResultList ,companyChooseList, illegalChooseList, stateChooseList)
-
-            rv_query_result.adapter = MyQueryResultAdapter(queryResultList2)
+            queryResultList = QuerySqlOP(this@MainActivity).queryChooseResult(queryAllResultList ,companyChooseList, illegalChooseList, stateChooseList)
+            rv_query_result.adapter = MyQueryResultAdapter(queryResultList)
             popupWindow.dismiss()
             params.alpha = 1f
             mWindow.attributes = params
