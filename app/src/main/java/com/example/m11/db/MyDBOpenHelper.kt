@@ -1,0 +1,148 @@
+package com.example.m11.db
+
+import android.database.sqlite.SQLiteOpenHelper
+import android.database.sqlite.SQLiteDatabase
+import android.content.ContentValues
+import android.content.Context
+
+class MyDBOpenHelper(context: Context?) : SQLiteOpenHelper(context, "my.db", null, 1) {
+
+    private val CREATE_RESULT_TABLE_STATEMENT = "create table resultInfo (_id integer primary key autoincrement, trainNumber varchar(20), state varchar(20), driver varchar(20), department varchar(100), category varchar(100), date varchar(100))"
+    private val CREATE_CHECK_WORK_TABLE_STATEMENT = "create table checkWorkInfo (_id integer primary key autoincrement, trainLine varchar(20), trainTime varchar(20), trainNumber varchar(20), driver varchar(20), trainCheckState varchar(20), wineCheckState varchar(20), signInState varchar(20), signOutState varchar(20))"
+    override fun onCreate(db: SQLiteDatabase) {
+        db.execSQL(CREATE_RESULT_TABLE_STATEMENT)
+        db.execSQL(CREATE_CHECK_WORK_TABLE_STATEMENT)
+        val values = ContentValues()
+        values.put("trainNumber", "27737")
+        values.put("state", "待反馈")
+        values.put("driver", "张三（09001234）")
+        values.put("department", "第一客运分公司")
+        values.put("category", "饰品佩戴")
+        values.put("date", "2021-12-13  11:38:23")
+        db.insert("resultInfo", null, values)
+        val values2 = ContentValues()
+        values2.put("trainNumber", "27737")
+        values2.put("state", "已完成")
+        values2.put("driver", "李四（09001234）")
+        values2.put("department", "第四客运分公司")
+        values2.put("category", "文明行为")
+        values2.put("date", "2021-12-13  11:38:23")
+        db.insert("resultInfo", null, values2)
+        val values3 = ContentValues()
+        values3.put("trainNumber", "27737")
+        values3.put("state", "已完成")
+        values3.put("driver", "王五（09001234）")
+        values3.put("department", "第二客运分公司")
+        values3.put("category", "饰品佩戴")
+        values3.put("date", "2021-12-13  11:38:23")
+        db.insert("resultInfo", null, values3)
+        val values4 = ContentValues()
+        values4.put("trainNumber", "27737")
+        values4.put("state", "已完成")
+        values4.put("driver", "赵六（09001234）")
+        values4.put("department", "第一客运分公司")
+        values4.put("category", "文明行为")
+        values4.put("date", "2021-12-13  11:38:23")
+        db.insert("resultInfo", null, values4)
+        val values5 = ContentValues()
+        values5.put("trainNumber", "27737")
+        values5.put("state", "待反馈")
+        values5.put("driver", "刘七（09001234）")
+        values5.put("department", "第三客运分公司")
+        values5.put("category", "饰品佩戴")
+        values5.put("date", "2021-12-13  11:38:23")
+        db.insert("resultInfo", null, values5)
+        val values6 = ContentValues()
+        values6.put("trainNumber", "27737")
+        values6.put("state", "已完成")
+        values6.put("driver", "王八（09001234）")
+        values6.put("department", "第四客运分公司")
+        values6.put("category", "饰品佩戴")
+        values6.put("date", "2021-12-13  11:38:23")
+        db.insert("resultInfo", null, values6)
+
+        val values7 = ContentValues()
+        values7.put("trainLine", "104")
+        values7.put("trainTime", "高峰班")
+        values7.put("trainNumber", "27737")
+        values7.put("driver", "张伟")
+        values7.put("trainCheckState", "通过")
+        values7.put("wineCheckState", "通过")
+        values7.put("signInState", "正常签到")
+        values7.put("signOutState", "未签退")
+        db.insert("checkWorkInfo", null, values7)
+
+        val values8 = ContentValues()
+        values8.put("trainLine", "24")
+        values8.put("trainTime", "早班")
+        values8.put("trainNumber", "27737")
+        values8.put("driver", "王明")
+        values8.put("trainCheckState", "通过")
+        values8.put("wineCheckState", "通过")
+        values8.put("signInState", "迟到")
+        values8.put("signOutState", "未签退")
+        db.insert("checkWorkInfo", null, values8)
+
+        val values9 = ContentValues()
+        values9.put("trainLine", "321")
+        values9.put("trainTime", "晚班")
+        values9.put("trainNumber", "27737")
+        values9.put("driver", "阿飞")
+        values9.put("trainCheckState", "通过")
+        values9.put("wineCheckState", "不通过")
+        values9.put("signInState", "正常签到")
+        values9.put("signOutState", "未签退")
+        db.insert("checkWorkInfo", null, values9)
+
+        val values11 = ContentValues()
+        values11.put("trainLine", "321")
+        values11.put("trainTime", "早班")
+        values11.put("trainNumber", "27737")
+        values11.put("driver", "谢昊霖")
+        values11.put("trainCheckState", "通过")
+        values11.put("wineCheckState", "通过")
+        values11.put("signInState", "迟到")
+        values11.put("signOutState", "未签退")
+        db.insert("checkWorkInfo", null, values11)
+
+
+        val values12 = ContentValues()
+        values12.put("trainLine", "104")
+        values12.put("trainTime", "晚班")
+        values12.put("trainNumber", "27737")
+        values12.put("driver", "詹姆斯")
+        values12.put("trainCheckState", "通过")
+        values12.put("wineCheckState", "不通过")
+        values12.put("signInState", "正常签到")
+        values12.put("signOutState", "未签退")
+        db.insert("checkWorkInfo", null, values12)
+
+
+        val values13 = ContentValues()
+        values13.put("trainLine", "104")
+        values13.put("trainTime", "高峰班")
+        values13.put("trainNumber", "27737")
+        values13.put("driver", "科比")
+        values13.put("trainCheckState", "通过")
+        values13.put("wineCheckState", "通过")
+        values13.put("signInState", "未签到")
+        values13.put("signOutState", "未签退")
+        db.insert("checkWorkInfo", null, values13)
+
+
+        val values14 = ContentValues()
+        values14.put("trainLine", "104")
+        values14.put("trainTime", "早班")
+        values14.put("trainNumber", "27737")
+        values14.put("driver", "乔丹")
+        values14.put("trainCheckState", "不通过")
+        values14.put("wineCheckState", "通过")
+        values14.put("signInState", "正常签到")
+        values14.put("signOutState", "未签退")
+        db.insert("checkWorkInfo", null, values14)
+
+
+
+    }
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {}
+}

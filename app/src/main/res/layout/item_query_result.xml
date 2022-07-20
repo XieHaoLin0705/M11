@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="345dp"
+    android:layout_height="168dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="12dp"
+    android:background="@drawable/background_item"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="321dp"
+        android:layout_height="22.5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/icon_car" />
+
+        <TextView
+            android:id="@+id/item_train_number"
+            android:layout_width="46dp"
+            android:layout_height="22.5dp"
+            android:layout_marginLeft="21.5dp"
+            android:text="27737"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_state"
+            android:layout_width="58dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/background_item_state"
+            android:gravity="center"
+            android:text="待反馈"
+            android:textColor="#FA8C16"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <View
+        android:layout_width="321dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="#EBEBEB"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="12dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="57dp"
+            android:layout_height="20dp"
+            android:text="驾驶员："
+            android:textColor="#000000"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/item_driver"
+            android:layout_width="121dp"
+            android:layout_height="20dp"
+            android:text="张三（09001234）"
+            android:textColor="#a6000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="12dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="71dp"
+            android:layout_height="20dp"
+            android:text="所属部门："
+            android:textColor="#000000"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/item_department"
+            android:layout_width="191dp"
+            android:layout_height="20dp"
+            android:text="电子客运分公司/枢纽中心/103"
+            android:textColor="#a6000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="12dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="71dp"
+            android:layout_height="20dp"
+            android:text="违规类别："
+            android:textColor="#d9000000"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/item_category"
+            android:layout_width="57dp"
+            android:layout_height="20dp"
+            android:text="饰品佩戴"
+            android:textColor="#a6000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="12dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/item_date"
+            android:layout_width="138dp"
+            android:layout_height="20dp"
+            android:text="2021-12-13  11:38:23"
+            android:textColor="#a6000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

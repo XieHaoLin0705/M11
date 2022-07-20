@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable-v24/background_pop_choose_time.xml" value="0.1265" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_address_pass_back.xml" value="0.1425" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_input_btn_register.xml" value="0.1425" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_item.xml" value="0.129" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_item_state.xml" value="0.129" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_item_state_finish.xml" value="0.1" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_pop.xml" value="0.108" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_pop_choose_time.xml" value="0.108" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_pop_reset.xml" value="0.108" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_pop_sure.xml" value="0.108" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_search_line_editText.xml" value="0.107" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_search_line_et.xml" value="0.1" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_small_point_green.xml" value="0.1425" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_small_point_red.xml" value="0.1425" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_small_point_white.xml" value="0.1425" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/background_small_point_yellow.xml" value="0.1425" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/checkbox_selector.xml" value="0.108" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/checkbox_selector_short.xml" value="0.1" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/drawable/dotted_line_vertical.xml" value="0.1425" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/layout/activity_add_info.xml" value="0.33" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/layout/activity_base.xml" value="0.1" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/layout/activity_check_work_manage.xml" value="0.33" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/layout/activity_location.xml" value="0.25" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/layout/activity_map.xml" value="0.25" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/layout/item_check_work.xml" value="0.6820512820512821" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/layout/item_map_search.xml" value="0.33" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/layout/item_query_result.xml" value="0.1" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/layout/popwindow_choose.xml" value="0.1" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/layout/popwindow_choose_line.xml" value="0.22" />
+        <entry key="..\:/Android/Android Projects/M11/app/src/main/res/layout/title_layout.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
