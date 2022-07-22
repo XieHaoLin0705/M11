@@ -175,19 +175,21 @@ class QuerySqlOP(context: Context?) {
         var a = 0
         var b = 0
         var c = 0
-        var d = 0
-        while (d < queryResultList.size) {
-            for (j in companyChooseList.indices) {
-                if (queryResultList[d].department.contains(companyChooseList[j])) {
-                    a++
+        if (!companyChooseList.contains("all")) {
+            var d = 0
+            while (d < queryResultList.size) {
+                for (j in companyChooseList.indices) {
+                    if (queryResultList[d].department.contains(companyChooseList[j])) {
+                        a++
+                    }
                 }
+                if (a == 0) {
+                    queryResultList.removeAt(d)
+                    d--
+                }
+                a = 0
+                d++
             }
-            if (a == 0) {
-                queryResultList.removeAt(d)
-                d--
-            }
-            a = 0
-            d++
         }
         var e = 0
         while (e < queryResultList.size) {

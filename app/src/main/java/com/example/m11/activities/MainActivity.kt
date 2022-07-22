@@ -70,87 +70,122 @@ class MainActivity : BaseActivity() {
             if (b) {
                 productListView.cb_pop_all_company.isChecked = false
                 companyTotal += "第一客运分公司/"
-//                companyTotal = judgeLong(companyTotal)
-                productListView.tv_pop_company_total.text = companyTotal
+                productListView.tv_pop_company_total.text = companyTotal.substring(0, companyTotal.length - 1)
             } else {
                 companyTotal = companyTotal.replace("第一客运分公司/","")
-                productListView.tv_pop_company_total.text = companyTotal
+                if (companyTotal.isEmpty()) {
+                    productListView.tv_pop_company_total.text = ""
+                } else {
+                    productListView.tv_pop_company_total.text = companyTotal.substring(0, companyTotal.length - 1)
+                }
             }
         }
         productListView.cb_pop_second_company.setOnCheckedChangeListener{ _, b ->
             if (b) {
                 productListView.cb_pop_all_company.isChecked = false
                 companyTotal += "第二客运分公司/"
-                productListView.tv_pop_company_total.text = companyTotal
+                productListView.tv_pop_company_total.text = companyTotal.substring(0, companyTotal.length - 1)
             }else {
                 companyTotal = companyTotal.replace("第二客运分公司/","")
-                productListView.tv_pop_company_total.text = companyTotal
+                if (companyTotal.isEmpty()) {
+                    productListView.tv_pop_company_total.text = ""
+                } else {
+                    productListView.tv_pop_company_total.text = companyTotal.substring(0, companyTotal.length - 1)
+                }
             }
         }
         productListView.cb_pop_third_company.setOnCheckedChangeListener{ _, b ->
             if (b) {
                 productListView.cb_pop_all_company.isChecked = false
                 companyTotal += "第三客运分公司/"
-                productListView.tv_pop_company_total.text = companyTotal
+                productListView.tv_pop_company_total.text = companyTotal.substring(0, companyTotal.length - 1)
             }else {
                 companyTotal = companyTotal.replace("第三客运分公司/","")
-                productListView.tv_pop_company_total.text = companyTotal
+                if (companyTotal.isEmpty()) {
+                    productListView.tv_pop_company_total.text = ""
+                } else {
+                    productListView.tv_pop_company_total.text = companyTotal.substring(0, companyTotal.length - 1)
+                }
             }
         }
         productListView.cb_pop_forth_company.setOnCheckedChangeListener{ _, b ->
             if (b) {
                 productListView.cb_pop_all_company.isChecked = false
                 companyTotal += "第四客运分公司/"
-                productListView.tv_pop_company_total.text = companyTotal
+                productListView.tv_pop_company_total.text = companyTotal.substring(0, companyTotal.length - 1)
             }else {
                 companyTotal = companyTotal.replace("第四客运分公司/","")
-                productListView.tv_pop_company_total.text = companyTotal
+                if (companyTotal.isEmpty()) {
+                    productListView.tv_pop_company_total.text = ""
+                } else {
+                    productListView.tv_pop_company_total.text = companyTotal.substring(0, companyTotal.length - 1)
+                }
             }
         }
         productListView.cb_pop_illegal_change_equipment.setOnCheckedChangeListener{ _, b ->
             if (b) {
                 illegalTotal += "调整信息化设备，"
-                productListView.tv_pop_illegal_total.text = illegalTotal
+                productListView.tv_pop_illegal_total.text = illegalTotal.substring(0, illegalTotal.length - 1)
             }else {
                 illegalTotal = illegalTotal.replace("调整信息化设备，","")
-                productListView.tv_pop_illegal_total.text = illegalTotal
+                if (illegalTotal.isEmpty()) {
+                    productListView.tv_pop_illegal_total.text = ""
+                } else {
+                    productListView.tv_pop_illegal_total.text = illegalTotal.substring(0, illegalTotal.length - 1)
+                }
             }
         }
 
         productListView.cb_pop_illegal_video.setOnCheckedChangeListener{ _, b ->
             if (b) {
                 illegalTotal += "饰品佩戴，"
-                productListView.tv_pop_illegal_total.text = illegalTotal
+                productListView.tv_pop_illegal_total.text = illegalTotal.substring(0, illegalTotal.length - 1)
             }else {
                 illegalTotal = illegalTotal.replace("饰品佩戴，","")
-                productListView.tv_pop_illegal_total.text = illegalTotal
+                if (illegalTotal.isEmpty()) {
+                    productListView.tv_pop_illegal_total.text = ""
+                } else {
+                    productListView.tv_pop_illegal_total.text = illegalTotal.substring(0, illegalTotal.length - 1)
+                }
             }
         }
         productListView.cb_pop_illegal_against_safe.setOnCheckedChangeListener{ _, b ->
             if (b) {
                 illegalTotal += "违反安全行驶，"
-                productListView.tv_pop_illegal_total.text = illegalTotal
+                productListView.tv_pop_illegal_total.text = illegalTotal.substring(0, illegalTotal.length - 1)
             }else {
                 illegalTotal = illegalTotal.replace("违反安全行驶，","")
-                productListView.tv_pop_illegal_total.text = illegalTotal
+                if (illegalTotal.isEmpty()) {
+                    productListView.tv_pop_illegal_total.text = ""
+                } else {
+                    productListView.tv_pop_illegal_total.text = illegalTotal.substring(0, illegalTotal.length - 1)
+                }
             }
         }
         productListView.cb_pop_illegal_culture_behavior.setOnCheckedChangeListener{ _, b ->
             if (b) {
                 illegalTotal += "文明行为，"
-                productListView.tv_pop_illegal_total.text = illegalTotal
+                productListView.tv_pop_illegal_total.text = illegalTotal.substring(0, illegalTotal.length - 1)
             }else {
                 illegalTotal = illegalTotal.replace("文明行为，","")
-                productListView.tv_pop_illegal_total.text = illegalTotal
+                if (illegalTotal.isEmpty()) {
+                    productListView.tv_pop_illegal_total.text = ""
+                } else {
+                    productListView.tv_pop_illegal_total.text = illegalTotal.substring(0, illegalTotal.length - 1)
+                }
             }
         }
         productListView.cb_pop_illegal_change_equipment_2.setOnCheckedChangeListener{ _, b ->
             if (b) {
                 illegalTotal += "调整信息化设备2，"
-                productListView.tv_pop_illegal_total.text = illegalTotal
+                productListView.tv_pop_illegal_total.text = illegalTotal.substring(0, illegalTotal.length - 1)
             }else {
                 illegalTotal = illegalTotal.replace("调整信息化设备2，","")
-                productListView.tv_pop_illegal_total.text = illegalTotal
+                if (illegalTotal.isEmpty()) {
+                    productListView.tv_pop_illegal_total.text = ""
+                } else {
+                    productListView.tv_pop_illegal_total.text = illegalTotal.substring(0, illegalTotal.length - 1)
+                }
             }
         }
         val firstCompanyList = mutableListOf<String>()
@@ -264,12 +299,5 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    private fun judgeLong(companyTotal: String): String {
-        var newCompanyTotal = companyTotal
-        if (companyTotal.length < 9) {
-            newCompanyTotal = companyTotal.replace("/", "")
-        }
-        return newCompanyTotal
-    }
 
 }
