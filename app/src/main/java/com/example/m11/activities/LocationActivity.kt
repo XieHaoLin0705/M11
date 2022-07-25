@@ -84,6 +84,9 @@ class LocationActivity : BaseActivity(), SensorEventListener {
             finish()
         }
         img_title_bar_back.setOnClickListener { this.finish() }
+        im_reset_et_address.setOnClickListener {
+            et_location_search.setText("")
+        }
     }
 
     private fun initLocation() {
@@ -168,13 +171,13 @@ class LocationActivity : BaseActivity(), SensorEventListener {
     }
 
     override fun onSensorChanged(sensorEvent: SensorEvent) {
-        val x = sensorEvent.values[SensorManager.DATA_X].toDouble()
-        if (abs(x - lastX) > 1.0) {
-            mCurrentDirection = x.toInt()
-            myLocationData = MyLocationData.Builder().accuracy(mCurrentAccurate).direction(mCurrentDirection.toFloat()).latitude(mCurrentLat).longitude(mCurrentLon).build()
-//            mBaiDuMap!!.setMyLocationData(myLocationData)
-        }
-        lastX = x
+//        val x = sensorEvent.values[SensorManager.DATA_X].toDouble()
+//        if (abs(x - lastX) > 1.0) {
+//            mCurrentDirection = x.toInt()
+//            myLocationData = MyLocationData.Builder().accuracy(mCurrentAccurate).direction(mCurrentDirection.toFloat()).latitude(mCurrentLat).longitude(mCurrentLon).build()
+////            mBaiDuMap!!.setMyLocationData(myLocationData)
+//        }
+//        lastX = x
     }
     override fun onAccuracyChanged(sensor: Sensor, i: Int) {}
 
@@ -242,9 +245,9 @@ class LocationActivity : BaseActivity(), SensorEventListener {
                             isFirstLoc = false
                         }
                         val ll2 = LatLng(resl[position].pt.latitude, resl[position].pt.longitude)
-                        val builder = MapStatus.Builder()
-                        builder.target(ll2).zoom(18.0f)
-                        mBaiDuMap!!.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()))
+                        val builder2 = MapStatus.Builder()
+                        builder2.target(ll2).zoom(18.0f)
+                        mBaiDuMap!!.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder2.build()))
                     }
                     override fun onLongClick(position: Int) {}
                 })

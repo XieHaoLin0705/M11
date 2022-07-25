@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/ll_address_search"
         android:layout_width="match_parent"
         android:layout_height="46dp"
@@ -26,18 +26,48 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="14.5dp"
             android:src="@drawable/icon_map_search" />
+
         <AutoCompleteTextView
             android:id="@+id/et_location_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="36dp"
             android:layout_marginTop="12.5dp"
+            android:layout_marginRight="100dp"
             android:background="@null"
             android:hint="请输入稽查地点搜索"
             android:textColor="#D9000000"
             android:textColorHint="#40000000"
             android:textSize="14sp" />
-    </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/im_reset_et_address"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_error_gray" />
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="19dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="28dp"
+                android:background="#EBEBEB" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="37dp"
+                android:textColor="#2B6BFE"
+                android:textSize="14sp"
+                android:text="搜索"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/lv_address_result"
