@@ -16,4 +16,16 @@
     <style name="CheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:button">@null</item>
     </style>
+    <style name="contextMenuAnim" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/context_menu_enter</item>
+        <!-- 指定显示时的动画xml -->
+        <item name="android:windowExitAnimation">@anim/context_menu_exit</item>
+        <!-- 指定消失时的动画xml -->
+    </style>
+    <style name="xiaLaDongHua" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/xiala_enter</item>
+        <!-- 指定显示时的动画xml -->
+        <item name="android:windowExitAnimation">@anim/xiala_exit</item>
+        <!-- 指定消失时的动画xml -->
+    </style>
 </resources>

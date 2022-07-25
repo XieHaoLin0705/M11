@@ -91,6 +91,7 @@ class CheckWorkManageActivity : BaseActivity() {
         val popupWindow = PopupWindow(productListView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         popupWindow.setBackgroundDrawable(null)
         popupWindow.isFocusable = true
+        popupWindow.animationStyle = R.style.xiaLaDongHua
         popupWindow.setOnDismissListener {
             params.alpha = 1f
             mWindow.attributes = params

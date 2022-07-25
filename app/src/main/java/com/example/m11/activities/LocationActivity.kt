@@ -1,5 +1,6 @@
 package com.example.m11.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -121,6 +122,7 @@ class LocationActivity : BaseActivity(), SensorEventListener {
     }
 
     inner class MyLocationListener : BDLocationListener {
+        @SuppressLint("SetTextI18n")
         override fun onReceiveLocation(location: BDLocation) {
             if (bmapView == null) {
                 return
@@ -137,9 +139,10 @@ class LocationActivity : BaseActivity(), SensorEventListener {
                 builder.target(ll).zoom(18.0f)
                 mBaiDuMap!!.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()))
             }
-            tv_location_total_address!!.text = location.addrStr
+            address = location.addrStr.replace("中国","")
+            tv_location_detail_address!!.text = location.district + location.street
+            tv_location_total_address!!.text = address
             area = location.district
-            address = location.addrStr
             setEdit(location.city)
         }
     }
@@ -169,7 +172,7 @@ class LocationActivity : BaseActivity(), SensorEventListener {
         if (abs(x - lastX) > 1.0) {
             mCurrentDirection = x.toInt()
             myLocationData = MyLocationData.Builder().accuracy(mCurrentAccurate).direction(mCurrentDirection.toFloat()).latitude(mCurrentLat).longitude(mCurrentLon).build()
-            mBaiDuMap!!.setMyLocationData(myLocationData)
+//            mBaiDuMap!!.setMyLocationData(myLocationData)
         }
         lastX = x
     }
@@ -228,6 +231,13 @@ class LocationActivity : BaseActivity(), SensorEventListener {
                         initLocation2()
                         val locationData: MyLocationData = MyLocationData.Builder().latitude(resl[position].pt.latitude).longitude(resl[position].pt.longitude).build()
                         mBaiDuMap!!.setMyLocationData(locationData)
+//                        val myLocConfig = MyLocationConfiguration(locationMode, true, mLocBitmap)
+//                        mBaiduMap.setMyLocationConfiguration(myLocConfig)
+                        val fromResource = BitmapDescriptorFactory.fromResource(R.drawable.location)
+                        mBaiDuMap!!.setMyLocationConfiguration(MyLocationConfiguration(null, true, fromResource))
+                        tv_location_detail_address.text = stringlist[position]
+                        tv_location_total_address.text = resl[position].address
+                        address = resl[position].address.replace("-","")
                         if (isFirstLoc) {
                             isFirstLoc = false
                         }
@@ -235,17 +245,9 @@ class LocationActivity : BaseActivity(), SensorEventListener {
                         val builder = MapStatus.Builder()
                         builder.target(ll2).zoom(18.0f)
                         mBaiDuMap!!.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()))
-                        tv_location_total_address!!.text = resl[position].address
-
-
-
-
                     }
                     override fun onLongClick(position: Int) {}
                 })
-                println("==========11111============$resl[]")
-                println("==========22222============$stringlist")
-                println("==========33333============$stringlist2")
             }
         }
     }
