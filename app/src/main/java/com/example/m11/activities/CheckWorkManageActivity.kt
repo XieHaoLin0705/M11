@@ -11,7 +11,6 @@ import com.example.m11.adapter.CheckWorkAdapter
 import com.example.m11.bean.CheckWorkInfo
 import com.example.m11.db.QuerySqlOP
 import kotlinx.android.synthetic.main.activity_check_work_manage.*
-import kotlinx.android.synthetic.main.popwindow_choose.view.*
 import kotlinx.android.synthetic.main.popwindow_choose_line.view.*
 import kotlinx.android.synthetic.main.title_layout.*
 
@@ -19,8 +18,8 @@ class CheckWorkManageActivity : BaseActivity() {
 
     private var checkWorkInfoList = mutableListOf<CheckWorkInfo>()
 
-    override fun baseSetView(id: Int) {
-        super.baseSetView(R.layout.activity_check_work_manage)
+    override fun setContentView(id: Int) {
+        super.setContentView(R.layout.activity_check_work_manage)
     }
 
     override fun initView() {

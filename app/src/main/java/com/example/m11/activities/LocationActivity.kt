@@ -27,38 +27,37 @@ import com.example.m11.R
 import com.example.m11.adapter.AutoEditAdapter
 import kotlinx.android.synthetic.main.activity_location.*
 import kotlinx.android.synthetic.main.title_layout.*
-import kotlin.math.abs
 
 class LocationActivity : BaseActivity(), SensorEventListener {
-    private var area: String? = null
-    private var address: String? = null
+
     private var lastX = 0.0
-    private var mBaiDuMap: BaiduMap? = null
-    private var mCurrentAccurate = 0f
     private var mCurrentLat = 0.0
     private var mCurrentLon = 0.0
     private var isFirstLoc = true
-    private var isShowListView = false
+    private var area: String? = null
+    private var mCurrentAccurate = 0f
     private var mCurrentDirection = 0
+    private var latLng: LatLng? = null
+    private var isShowListView = false
+    private var address: String? = null
+    private var mBaiDuMap: BaiduMap? = null
+    private var poiSearch: PoiSearch? = null
+    private val myListener = MyLocationListener()
     private var mLocClient: LocationClient? = null
     private var mLocClient2: LocationClient? = null
-    private var mSensorManager: SensorManager? = null
-    private var myLocationData: MyLocationData? = null
-    private var poiSearch: PoiSearch? = null
     private var stringlist = mutableListOf<String>()
+    private var mSensorManager: SensorManager? = null
     private var stringlist2 = mutableListOf<String>()
+    private var myLocationData: MyLocationData? = null
     private var mSuggestionSearch: SuggestionSearch? = null
-    private val myListener = MyLocationListener()
-    private var latLng: LatLng? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initLocation()
     }
-    override fun baseSetView(id: Int) {
-        super.baseSetView(R.layout.activity_location)
+    override fun setContentView(id: Int) {
+        super.setContentView(R.layout.activity_location)
     }
-
     override fun initView() {
         mBaiDuMap = bmapView!!.map
         mSensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
@@ -75,7 +74,6 @@ class LocationActivity : BaseActivity(), SensorEventListener {
         mSuggestionSearch = SuggestionSearch.newInstance()
         mSuggestionSearch!!.setOnGetSuggestionResultListener(listener)
     }
-
     override fun onClick() {
         tv_location_pass_back.setOnClickListener {
             val intent = Intent()
@@ -88,7 +86,6 @@ class LocationActivity : BaseActivity(), SensorEventListener {
             et_location_search.setText("")
         }
     }
-
     private fun initLocation() {
         mBaiDuMap!!.isMyLocationEnabled = true
         LocationClient.setAgreePrivacy(true)
@@ -123,7 +120,6 @@ class LocationActivity : BaseActivity(), SensorEventListener {
             e.printStackTrace()
         }
     }
-
     inner class MyLocationListener : BDLocationListener {
         @SuppressLint("SetTextI18n")
         override fun onReceiveLocation(location: BDLocation) {
@@ -149,38 +145,6 @@ class LocationActivity : BaseActivity(), SensorEventListener {
             setEdit(location.city)
         }
     }
-
-    override fun onResume() {
-        super.onResume()
-        bmapView!!.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        bmapView!!.onPause()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mSensorManager!!.unregisterListener(this)
-        if (mLocClient != null) {
-            mLocClient!!.stop()
-        }
-        mBaiDuMap!!.isMyLocationEnabled = false
-        bmapView!!.onDestroy()
-    }
-
-    override fun onSensorChanged(sensorEvent: SensorEvent) {
-//        val x = sensorEvent.values[SensorManager.DATA_X].toDouble()
-//        if (abs(x - lastX) > 1.0) {
-//            mCurrentDirection = x.toInt()
-//            myLocationData = MyLocationData.Builder().accuracy(mCurrentAccurate).direction(mCurrentDirection.toFloat()).latitude(mCurrentLat).longitude(mCurrentLon).build()
-////            mBaiDuMap!!.setMyLocationData(myLocationData)
-//        }
-//        lastX = x
-    }
-    override fun onAccuracyChanged(sensor: Sensor, i: Int) {}
-
     fun setEdit(city: String?) {
 
         if (isShowListView){
@@ -188,11 +152,9 @@ class LocationActivity : BaseActivity(), SensorEventListener {
         } else {
             lv_address_result.visibility = GONE
         }
-        et_location_search.setOnClickListener(View.OnClickListener { et_location_search.showDropDown() })
+        et_location_search.setOnClickListener { et_location_search.showDropDown() }
         et_location_search.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(charSequence: CharSequence?, i: Int, i1: Int, i2: Int) {
-
-            }
+            override fun beforeTextChanged(charSequence: CharSequence?, i: Int, i1: Int, i2: Int) {}
             override fun onTextChanged(charSequence: CharSequence?, i: Int, i1: Int, i2: Int) {
                 mSuggestionSearch!!.requestSuggestion(SuggestionSearchOption()
                         .keyword(et_location_search.text.toString())
@@ -200,7 +162,6 @@ class LocationActivity : BaseActivity(), SensorEventListener {
                 lv_address_result.visibility = VISIBLE
                 isShowListView = true
             }
-
             override fun afterTextChanged(editable: Editable?) {
                 if (editable!!.isEmpty()){
                     lv_address_result.visibility = GONE
@@ -209,12 +170,11 @@ class LocationActivity : BaseActivity(), SensorEventListener {
             }
         })
     }
-
     private var listener: OnGetSuggestionResultListener = object : OnGetSuggestionResultListener {
         override fun onGetSuggestionResult(res: SuggestionResult?) {
             if (res?.allSuggestions == null) { //未找到相关结果
                 return
-            } else { //获取在线建议检索结果
+            } else {
                 val resl: List<SuggestionResult.SuggestionInfo> = res.allSuggestions
                 stringlist.clear()
                 stringlist2.clear()
@@ -234,8 +194,6 @@ class LocationActivity : BaseActivity(), SensorEventListener {
                         initLocation2()
                         val locationData: MyLocationData = MyLocationData.Builder().latitude(resl[position].pt.latitude).longitude(resl[position].pt.longitude).build()
                         mBaiDuMap!!.setMyLocationData(locationData)
-//                        val myLocConfig = MyLocationConfiguration(locationMode, true, mLocBitmap)
-//                        mBaiduMap.setMyLocationConfiguration(myLocConfig)
                         val fromResource = BitmapDescriptorFactory.fromResource(R.drawable.location)
                         mBaiDuMap!!.setMyLocationConfiguration(MyLocationConfiguration(null, true, fromResource))
                         tv_location_detail_address.text = stringlist[position]
@@ -253,5 +211,32 @@ class LocationActivity : BaseActivity(), SensorEventListener {
                 })
             }
         }
+    }
+    override fun onSensorChanged(sensorEvent: SensorEvent) {
+//        val x = sensorEvent.values[SensorManager.DATA_X].toDouble()
+//        if (abs(x - lastX) > 1.0) {
+//            mCurrentDirection = x.toInt()
+//            myLocationData = MyLocationData.Builder().accuracy(mCurrentAccurate).direction(mCurrentDirection.toFloat()).latitude(mCurrentLat).longitude(mCurrentLon).build()
+////            mBaiDuMap!!.setMyLocationData(myLocationData)
+//        }
+//        lastX = x
+    }
+    override fun onAccuracyChanged(sensor: Sensor, i: Int) {}
+    override fun onResume() {
+        super.onResume()
+        bmapView!!.onResume()
+    }
+    override fun onPause() {
+        super.onPause()
+        bmapView!!.onPause()
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        mSensorManager!!.unregisterListener(this)
+        if (mLocClient != null) {
+            mLocClient!!.stop()
+        }
+        mBaiDuMap!!.isMyLocationEnabled = false
+        bmapView!!.onDestroy()
     }
 }

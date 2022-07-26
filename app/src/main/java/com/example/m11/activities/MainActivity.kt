@@ -15,8 +15,8 @@ import kotlinx.android.synthetic.main.title_layout.*
 class MainActivity : BaseActivity() {
 
     private var queryResultList = mutableListOf<QueryResultInfo>()
-    override fun baseSetView(id: Int) {
-        super.baseSetView(R.layout.activity_main)
+    override fun setContentView(id: Int) {
+        super.setContentView(R.layout.activity_main)
     }
 
     override fun onStart() {
@@ -53,7 +53,6 @@ class MainActivity : BaseActivity() {
     }
 
     private fun popupWindowOperation(productListView: View, popupWindow: PopupWindow, mWindow: Window, params: WindowManager.LayoutParams) {
-
         var companyTotal = ""
         var illegalTotal = ""
         productListView.cb_pop_all_company.setOnCheckedChangeListener { _, b ->
@@ -299,6 +298,4 @@ class MainActivity : BaseActivity() {
             mWindow.attributes = params
         }
     }
-
-
 }

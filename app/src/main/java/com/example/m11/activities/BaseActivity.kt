@@ -8,13 +8,10 @@ import com.example.m11.R
 open class BaseActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        baseSetView(R.layout.activity_base)
+        setContentView(R.layout.activity_base)
         initView()
         initData()
         onClick()
-    }
-    open fun baseSetView(id: Int) {
-        setContentView(id)
     }
     open fun initView() {}
     open fun initData() {}

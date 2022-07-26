@@ -4,7 +4,6 @@ import android.content.Intent
 import android.view.View.GONE
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.baidu.mapapi.search.poi.*
 import com.example.m11.R
 import com.example.m11.db.QuerySqlOP
 import kotlinx.android.synthetic.main.activity_add_info.*
@@ -12,8 +11,8 @@ import kotlinx.android.synthetic.main.title_layout.*
 
 class AddInfoActivity : BaseActivity() {
 
-    override fun baseSetView(id: Int) {
-        super.baseSetView(R.layout.activity_add_info)
+    override fun setContentView(id: Int) {
+        super.setContentView(R.layout.activity_add_info)
     }
 
     override fun initView() {
